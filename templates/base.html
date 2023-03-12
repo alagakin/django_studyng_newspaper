@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} Newspaper App {% endblock title %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 <main>
+    <div class="bg-gray-200  p-3 mb-4 flex justify-between">
+        <a href="{% url 'home' %}" class="text-xl">
+            Home
+        </a>
+        <a href="{% url 'article_list' %}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">articles</a>
+    </div>
     {% if not user.is_authenticated %}
         <p>You are not logged in</p>
         <a href="{% url 'login' %}">Log In</a>
