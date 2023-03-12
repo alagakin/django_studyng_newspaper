@@ -12,4 +12,14 @@
         <a href="{% url 'article_edit' object.pk %}" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a> |
         <a href="{% url 'article_delete' object.pk %}" class="text-red-600 dark:text-red-500 hover:underline">Delete</a>
     </div>
+    <div class="mt-5">
+        {% for comment in object.comments.all %}
+            <div class="mb-2">
+                <span>{{ comment.author }}</span>
+                <p>
+                    {{ comment }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock content %}
