@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit "{{ object.title }}"  {% endblock %}
+
+{% block content %}
+    <h1>Edit "{{ object.title }}"</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="bg-blue-500 p-2 rounded-xl">Update</button>
+    </form>
+{% endblock content %}
